@@ -33,8 +33,7 @@ function reset(){
     }
 
     suonoReset();
-    maxRecord();
-    minRecord();
+    record();
     removeTitle();
 
 }
@@ -65,13 +64,15 @@ function gradual(){
 
 let maxNumber= 0;
 
-function maxRecord (){
-    if(counter>maxNumber){
+function record (){
+    if(counter>maxNumber && counter !== 0){
         maxNumber = counter;
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK POSITIVI";
-    } else{
+    } else if(counter<maxNumber && counter !== 0){
         maxNumber = counter;
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK NEGATIVI";
+    } else{
+        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI 0 CLICK";
     }
 }
 
