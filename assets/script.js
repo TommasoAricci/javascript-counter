@@ -1,6 +1,8 @@
 let counter = 0;
 let interval;
 
+//counter//
+
 function piuUno(){
     counter++;
     document.getElementById("number").innerHTML = counter;
@@ -30,8 +32,20 @@ function reset(){
         interval = setInterval(gradual,3);
     }
 
+    suonoReset();
+    maxRecord();
+    minRecord();
+    removeTitle();
+
+}
+
+function suonoReset(){
     let audioLoop = document.getElementById("audioloop");
-    audioLoop.play();
+    if(counter>0 || counter <0){
+        audioLoop.play();
+    } else{
+        audioLoop.pause();
+    }
 }
         
 
@@ -45,4 +59,25 @@ function gradual(){
         } else{
         clearInterval(interval);
     }
+}
+
+//record//
+
+let maxNumber= 0;
+
+function maxRecord (){
+    if(counter>maxNumber){
+        maxNumber = counter;
+        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK POSITIVI";
+    } else{
+        maxNumber = counter;
+        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK NEGATIVI";
+    }
+}
+
+//rimozione html//
+
+function removeTitle(){
+    let title = document.querySelector("h2");
+    title.remove();
 }
