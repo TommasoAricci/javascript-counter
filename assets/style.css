@@ -53,6 +53,8 @@ h1{
 .counter{
     width: 350px;
     height: 480px;
+    margin-left: 20px;
+    margin-right: 20px;
     
     display: flex;
     flex-direction: column;
