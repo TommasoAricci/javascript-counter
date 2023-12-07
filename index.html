@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
     
     <title>Counter di Tommaso Aricci</title>
 
 </head>
 <body>
-
+<div class="blockh1">
     <h1>COUNTER DI TOMMASO ARICCI</h1>
-
-    <div class="block">
+</div>
         <div class="counter">
 
             <div class="zero">
@@ -22,14 +21,17 @@
 
             <div class="buttons">
                 <button class="bottone1" onclick="menoUno()">-</button>
+                <button class="reset" onclick="reset()">RESET</button>
                 <button class="bottone2" onclick="piuUno()">+</button>
+                
             </div>
 
-            <button class="reset" onclick="reset()">RESET</button>
+            <audio id="audioElement" src="assets/audio/bulp.mp3"></audio>
+            <audio id="audioloop" src="assets/audio/reset.mp3"></audio>
+
 
         
         </div>
-    </div>
 </body>
 
 </html>
