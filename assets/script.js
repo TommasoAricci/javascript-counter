@@ -80,6 +80,6 @@ function record (){
 //rimozione html//
 
 function removeTitle(){
-    let title = document.querySelector(".rules");
-    title.remove();
+    let rules = document.querySelector(".rules");
+    rules.remove();
 }
