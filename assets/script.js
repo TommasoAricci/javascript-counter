@@ -73,6 +73,8 @@ function record (){
         minNumber = counter;
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + minNumber + " CLICK NEGATIVI";
     } else if(counter === 0){
+        maxNumber = 0;
+        minNumber = 0;
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI 0 CLICK";
     }
 }
