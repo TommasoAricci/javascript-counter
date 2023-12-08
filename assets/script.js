@@ -63,15 +63,16 @@ function gradual(){
 //record//
 
 let maxNumber= 0;
+let minNumber= 0;
 
 function record (){
-    if(counter>maxNumber && counter !== 0){
+    if(counter > maxNumber){
         maxNumber = counter;
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK POSITIVI";
-    } else if(counter<maxNumber && counter !== 0){
-        maxNumber = counter;
-        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK NEGATIVI";
-    } else{
+    } else if(counter < minNumber){
+        minNumber = counter;
+        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + minNumber + " CLICK NEGATIVI";
+    } else if(counter === 0){
         document.querySelector("h1").innerHTML = "IL TUO RECORD È DI 0 CLICK";
     }
 }
@@ -79,6 +80,6 @@ function record (){
 //rimozione html//
 
 function removeTitle(){
-    let title = document.querySelector("h2");
+    let title = document.querySelector(".rules");
     title.remove();
 }

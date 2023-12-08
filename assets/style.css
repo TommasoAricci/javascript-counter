@@ -5,6 +5,7 @@
 }
 
 body{
+    margin-top: 20px;
     background-color: #216477;
     display: flex;
     justify-content: center;
@@ -21,15 +22,13 @@ body{
     text-align: center;
 }
 
-h2{
-    font-size: 16px;
+.rules ul{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    list-style: none;
     font-family: Jost;
-    font-weight: 600;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-transform:uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 h1{
@@ -166,6 +165,13 @@ h1{
         font-size: 20px;
         margin-left: 80px;
         margin-right: 80px;
+    }
+
+    .rules ul{
+        margin-top: 24px;
+        list-style: none;
+        font-family: Jost;
+        letter-spacing: 1px;
     }
 
     
