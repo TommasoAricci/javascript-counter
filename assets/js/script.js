@@ -68,14 +68,14 @@ let minNumber= 0;
 function record (){
     if(counter > maxNumber){
         maxNumber = counter;
-        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + maxNumber + " CLICK POSITIVI";
+        document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS +" + maxNumber + " CLICKS";
     } else if(counter < minNumber){
         minNumber = counter;
-        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI " + minNumber + " CLICK NEGATIVI";
+        document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS " + minNumber + " CLICKS";
     } else if(counter === 0){
         maxNumber = 0;
         minNumber = 0;
-        document.querySelector("h1").innerHTML = "IL TUO RECORD È DI 0 CLICK";
+        document.querySelector("h1").innerHTML = "YOU PRESSED 0 CLICKS";
     }
 }
 
