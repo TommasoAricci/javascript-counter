@@ -5,7 +5,7 @@
 }
 
 body{
-    margin-top: 20px;
+    margin-top: 30px;
     background-color: #216477;
     display: flex;
     justify-content: center;
@@ -22,14 +22,24 @@ body{
     text-align: center;
 }
 
+.rules{
+    background-color: rgba(255, 255, 255, 0.547);
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
 .rules ul{
-    margin-bottom: 5px;
-    margin-top: 10px;
     list-style: none;
     font-family: Jost;
     letter-spacing: 1px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
+}
+
+.rules ul li{
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
 h1{
@@ -37,10 +47,11 @@ h1{
     color: orange;
     font-family: Jost;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 25px;
 }
 
 #number{
@@ -51,8 +62,8 @@ h1{
 }
 
 .counter{
-    width: 350px;
-    height: 480px;
+    width: 320px;
+    height: 460px;
     margin-left: 20px;
     margin-right: 20px;
     
@@ -61,7 +72,7 @@ h1{
     justify-content: center;
     align-items: center;
     background-color: #267287;
-    border-radius: 20px;
+    border-radius: 80px;
 
     position: relative;
 
@@ -135,9 +146,11 @@ h1{
 /*media queries*/
 
 @media only screen and (min-width: 768px){
+
     .counter{
+        margin-top: 80px;
         width: 700px;
-        height: 450px;
+        height: 430px;
         position: static;
     }
 
@@ -147,7 +160,7 @@ h1{
         font-weight: 800;
         margin-top: 0px;
         position: static;
-        margin-bottom: 0px;
+        margin-bottom: px;
     }
 
 
@@ -162,17 +175,23 @@ h1{
         margin-bottom: 0;
     }
 
-    h2{
-        font-size: 20px;
-        margin-left: 80px;
-        margin-right: 80px;
+    h1{
+        font-size: 40px;
+        margin-bottom: 35px;
+        margin-top: 100px;
     }
 
     .rules ul{
-        margin-top: 24px;
         list-style: none;
         font-family: Jost;
         letter-spacing: 1px;
+        font-size: 16px;
+    }
+
+    .rules{
+        margin-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     
