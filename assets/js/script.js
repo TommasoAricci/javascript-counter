@@ -35,6 +35,7 @@ function reset(){
     suonoReset();
     record();
     removeTitle();
+    margin();
 
 }
 
@@ -58,6 +59,11 @@ function gradual(){
         } else{
         clearInterval(interval);
     }
+}
+
+function margin(){
+    let title = document.getElementById("title");
+    title.style.marginBottom="-5px";
 }
 
 //record//
@@ -85,3 +91,6 @@ function removeTitle(){
     let rules = document.querySelector(".rules");
     rules.remove();
 }
+
+//css modifiche//
+
