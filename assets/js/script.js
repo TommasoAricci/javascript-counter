@@ -3,6 +3,13 @@ let interval;
 let maxNumber= 0;
 let minNumber= 0;
 
+//audio background//
+
+document.addEventListener('DOMContentLoaded', function() {
+    let audioback = document.getElementById("audioBack");
+    audioback.play();
+})
+
 //counter//
 
 function piuUno(){
@@ -38,7 +45,6 @@ function reset(){
     record();
     removeTitle();
     margin();
-
 }
 
 function suonoReset(){
@@ -71,23 +77,33 @@ function margin(){
 //record//
 
 function record (){
+
     let audioVincita = document.getElementById("audioWin");
-    if(counter > maxNumber){
+
+
+        if(counter > maxNumber){
+        titleOne.style.display = 'inline-block';
         maxNumber = counter;
-        document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS +" + maxNumber + " CLICKS";
         audioVincita.play();
+        document.getElementById("titleOne").innerHTML = "YOUR MAX RECORD IS +" + maxNumber + " CLICKS";
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
+        title.style.display = 'none';
     } else if(counter < minNumber){
+        titleTwo.style.display = 'inline-block';
         minNumber = counter;
-        document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS " + minNumber + " CLICKS";
         audioVincita.play();
+        document.getElementById("titleTwo").innerHTML = "YOUR MAX RECORD IS " + minNumber + " CLICKS";
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
+        title.style.display = 'none';
     } else if(counter === 0){
         maxNumber = 0;
         minNumber = 0;
-        document.querySelector("h1").innerHTML = "YOU PRESSED 0 CLICKS";
+        title.style.display = 'inline-block';
+        document.getElementById("title").innerHTML = "YOU PRESSED 0 CLICKS";
+        titleOne.style.display = 'none';
+        titleTwo.style.display = 'none';
     }
 }
 

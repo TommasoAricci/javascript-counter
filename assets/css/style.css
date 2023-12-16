@@ -53,6 +53,11 @@ h1{
     margin-right: 20px;
 }
 
+#titleOne, #titleTwo{
+    padding: 10px;
+    display: none;
+}
+
 #number{
     font-size: 60px;
     font-weight: 800;
