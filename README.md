@@ -4,9 +4,7 @@ Welcome everyone to my new Javascript project, a beautiful counter!
 
 ## About the project
 
-After weeks stydying the basics of Javascript I wanted to challenge myself creating a simple counter.   
-As I started the project I got passionate about Js language, figuring out all the issues and finding different ways to write the code.    
-That's why I haven't created just a simple counter but I decided to add some more functions, in order to have something more interactive. 
+After weeks stydying the basics of Javascript I wanted to challenge myself creating a simple counter. As I started the project I got passionate about Js language, figuring out all the issues and finding different ways to write the code. That's why I haven't created just a simple counter but I decided to add some more functions, in order to have something more interactive. 
 
 ## How it works
 
@@ -15,9 +13,9 @@ The rule is only one: **count untill you can!**
 
 Its operation is as simple as a game:
 
-1. PRESS THE BUTTONS + AND - TO INCREMENT O DECREMENT THE COUNTER
-2. PRESS RESET TO VIEW THE ACTUAL RECORD 
-3. PRESS RESET A SECOND TIME TO RESET THE COUNTER
+- Press the buttons + and - to increment o decrement the counter
+- Press reset to view the actual record reached
+- Press reset a second time to reset the counter
 
 Having two buttons it's possible to count above and below zero.   
 It will be recorded the max positive number and the max negative number reached.
