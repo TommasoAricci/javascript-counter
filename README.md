@@ -10,7 +10,7 @@ That's why I haven't created just a simple counter but I decided to add some mor
 
 ## How it works
 
-This counter is a challenge for your fingers. 
+This counter is a challenge for your fingers.   
 The rule is only one: **count untill you can!**
 
 Its operation is as simple as a game:
