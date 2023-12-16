@@ -1,5 +1,7 @@
 let counter = 0;
 let interval;
+let maxNumber= 0;
+let minNumber= 0;
 
 //counter//
 
@@ -68,16 +70,20 @@ function margin(){
 
 //record//
 
-let maxNumber= 0;
-let minNumber= 0;
-
 function record (){
+    let audioVincita = document.getElementById("audioWin");
     if(counter > maxNumber){
         maxNumber = counter;
         document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS +" + maxNumber + " CLICKS";
+        audioVincita.play();
+        let audioLoop = document.getElementById("audioloop");
+        audioLoop.pause();
     } else if(counter < minNumber){
         minNumber = counter;
         document.querySelector("h1").innerHTML = "YOUR MAX RECORD IS " + minNumber + " CLICKS";
+        audioVincita.play();
+        let audioLoop = document.getElementById("audioloop");
+        audioLoop.pause();
     } else if(counter === 0){
         maxNumber = 0;
         minNumber = 0;
