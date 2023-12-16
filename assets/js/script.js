@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //counter//
 
-function piuUno(){
+function plusOne(){
     counter++;
     document.getElementById("number").innerHTML = counter;
     let audio = document.getElementById("audioElement");
     audio.play();
 }
 
-function menoUno(){
+function minOne(){
     counter--;
     document.getElementById("number").innerHTML = counter;
     let audio = document.getElementById("audioElement");
@@ -41,21 +41,11 @@ function reset(){
         interval = setInterval(gradual,3);
     }
 
-    suonoReset();
+    resetSound();
     record();
     removeTitle();
     margin();
-}
-
-function suonoReset(){
-    let audioLoop = document.getElementById("audioloop");
-    if(counter>0 || counter <0){
-        audioLoop.play();
-    } else{
-        audioLoop.pause();
-    }
-}
-        
+}    
 
 function gradual(){
         if(counter<0){
@@ -69,33 +59,38 @@ function gradual(){
     }
 }
 
-function margin(){
-    let title = document.getElementById("title");
-    title.style.marginBottom="-5px";
+function resetSound(){
+    let audioLoop = document.getElementById("audioloop");
+    if(counter>0 || counter <0){
+        audioLoop.play();
+    } else{
+        audioLoop.pause();
+    }
 }
+
 
 //record//
 
 function record (){
 
-    let audioVincita = document.getElementById("audioWin");
+    let audioWin = document.getElementById("audioWin");
 
 
     if(counter > maxNumber){
         titleOne.style.display = 'inline-block';
         maxNumber = counter;
-        audioVincita.play();
-        audioVincita.currentTime = 0;
-        document.getElementById("titleOne").innerHTML = "POSITIVE RECORD = +" + maxNumber + " CLICKS";
+        audioWin.play();
+        audioWin.currentTime = 0;
+        document.getElementById("titleOne").innerHTML = "POSITIVE RECORD IS +" + maxNumber + " CLICKS";
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
     } else if(counter < minNumber){
         titleTwo.style.display = 'inline-block';
         minNumber = counter;
-        document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD = " + minNumber + " CLICKS";
-        audioVincita.play();
-        audioVincita.currentTime = 0;
+        document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD IS " + minNumber + " CLICKS";
+        audioWin.play();
+        audioWin.currentTime = 0;
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
@@ -103,7 +98,7 @@ function record (){
         maxNumber = 0;
         minNumber = 0;
         title.style.display = 'inline-block';
-        document.getElementById("title").innerHTML = "YOU PRESSED 0 CLICKS";
+        document.getElementById("title").innerHTML = "YOUR RECORD IS 0 CLICKS";
         titleOne.style.display = 'none';
         titleTwo.style.display = 'none';
     }
@@ -118,3 +113,7 @@ function removeTitle(){
 
 //css modifiche//
 
+function margin(){
+    let title = document.getElementById("title");
+    title.style.marginBottom="-5px";
+}
