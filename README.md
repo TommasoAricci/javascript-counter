@@ -22,9 +22,27 @@ It will be recorded the max positive number and the max negative number reached.
 
 Different sounds have been added to get the program more dynamic and funny.
 
-![link]([https://www.dropbox.com/scl/fi/o0yywarp1p9qkhq11mem3/Screenshot-2023-12-16-142807.png?rlkey=9qbf7q3zm9pn7r8h5eflhtgrd&dl=0](https://i.postimg.cc/W134vYJv/Screenshot-2023-12-16-142807.png))
+<img src="https://i.postimg.cc/W134vYJv/Screenshot-2023-12-16-142807.png" alt="Testo alternativo" width="300" height="200">
 
 ## How Javascript is structured
+
+First of all I created the **counter section** with different functions:
+
+```
+function plusOne()
+function minOne()
+function reset()
+```
+
+These three functions set what happens if we click the buttons +, - and reset, through the ```onclick``` event in Html.
+
+```
+gradual()
+resetSound
+```
+
+Here I've set the counter to gradually count back to zero and the sound of the reset button.
+
 
 
 
