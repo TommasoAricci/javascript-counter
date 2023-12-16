@@ -8,7 +8,6 @@ let minNumber= 0;
 document.addEventListener('DOMContentLoaded', function() {
     let audioback = document.getElementById("audioBack");
     audioback.play();
-    audioback.pause();
 })
 
 //counter//
