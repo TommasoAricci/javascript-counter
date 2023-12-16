@@ -8,6 +8,7 @@ let minNumber= 0;
 document.addEventListener('DOMContentLoaded', function() {
     let audioback = document.getElementById("audioBack");
     audioback.play();
+    audioback.pause();
 })
 
 //counter//
@@ -81,19 +82,21 @@ function record (){
     let audioVincita = document.getElementById("audioWin");
 
 
-        if(counter > maxNumber){
+    if(counter > maxNumber){
         titleOne.style.display = 'inline-block';
         maxNumber = counter;
         audioVincita.play();
-        document.getElementById("titleOne").innerHTML = "YOUR MAX RECORD IS +" + maxNumber + " CLICKS";
+        audioVincita.currentTime = 0;
+        document.getElementById("titleOne").innerHTML = "POSITIVE RECORD = +" + maxNumber + " CLICKS";
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
     } else if(counter < minNumber){
         titleTwo.style.display = 'inline-block';
         minNumber = counter;
+        document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD = " + minNumber + " CLICKS";
         audioVincita.play();
-        document.getElementById("titleTwo").innerHTML = "YOUR MAX RECORD IS " + minNumber + " CLICKS";
+        audioVincita.currentTime = 0;
         let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
