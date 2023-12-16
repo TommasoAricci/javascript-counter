@@ -22,7 +22,7 @@ It will be recorded the max positive number and the max negative number reached.
 
 Different sounds have been added to get the program more dynamic and funny.
 
-![link] (https://www.dropbox.com/scl/fi/o0yywarp1p9qkhq11mem3/Screenshot-2023-12-16-142807.png?rlkey=9qbf7q3zm9pn7r8h5eflhtgrd&dl=0)
+![link]([https://www.dropbox.com/scl/fi/o0yywarp1p9qkhq11mem3/Screenshot-2023-12-16-142807.png?rlkey=9qbf7q3zm9pn7r8h5eflhtgrd&dl=0](https://i.postimg.cc/W134vYJv/Screenshot-2023-12-16-142807.png))
 
 ## How Javascript is structured
 
