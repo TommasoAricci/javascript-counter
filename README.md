@@ -26,7 +26,7 @@ Different sounds have been added to get the program more dynamic and funny.
 
 ## How Javascript is structured
 
-First of all I created the **counter section** with different functions:
+First of all I set some global variables and then I created the **counter section** with different functions:
 
 ```
 function plusOne()
@@ -37,8 +37,8 @@ function reset()
 These three functions set what happens if we click the buttons +, - and reset, through the ```onclick``` event in Html.
 
 ```
-gradual()
-resetSound
+function gradual()
+function resetSound()
 ```
 
 Here I've set the counter to gradually count back to zero and the sound of the reset button.
