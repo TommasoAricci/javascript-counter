@@ -1,3 +1,5 @@
+[RUN THE COUNTER](https://tommasoaricci.github.io/javascript-counter/)
+
 # Ready to coun'til you can?
 
 Welcome everyone to my new Javascript project, a beautiful counter!
@@ -21,9 +23,7 @@ It will be recorded the max positive number and the max negative number reached.
 
 Different sounds have been added to get the program more dynamic and funny.
 
-<a href="https://tommasoaricci.github.io/javascript-counter/">
-    <img src="https://i.postimg.cc/W134vYJv/Screenshot-2023-12-16-142807.png" alt="Testo alternativo" width="300" height="200">
-</a>
+<img src="https://i.postimg.cc/W134vYJv/Screenshot-2023-12-16-142807.png" alt="Testo alternativo" width="300" height="200">
 
 ## How Javascript is structured
 
