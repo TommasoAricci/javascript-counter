@@ -143,7 +143,7 @@ function record (){
 
 function removeTitle(){
     let rules = document.querySelector(".rules");
-    rules.remove();
+    rules.style.display = 'none';
 }
 
 //css modifiche//
