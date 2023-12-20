@@ -5,8 +5,11 @@ let minNumber= 0;
 
 //audio effects//
 let audioElement = new Audio("assets/audio/bulp.mp3");
+audioElement.type = "audio/mpeg";
 let audioLoop = new Audio("assets/audio/reset.mp3");
+audioLoop.type = "audio/mpeg";
 let audioWin = new Audio("assets/audio/achievement.mp3");
+audioWin.type = "audio/mpeg";
 
 
 //creazione elementi//
