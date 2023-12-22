@@ -30,7 +30,7 @@ Different sounds have been added to get the program more dynamic and funny.
 First of all I **created the html elements** through Javascript using a ```function createElement (type, theClass, id, text, parent)``` function, adding then all the arguments of the single element. 
 This made the code much easier to write and to read.
 
-In the **counter section** with different functions:
+In the **counter section** there are some different functions:
 
 ```
 function plusOne()
@@ -38,7 +38,7 @@ function minOne()
 function reset()
 ```
 
-These three functions set what happens if we click the buttons +, - and reset, through the ```addEventListener("click", function(event)```.
+These three functions set what happens if we click the buttons +, - and reset, through the ```addEventListener("click", function(event)```, letting the counter work properly.
 
 ```
 function gradual()
