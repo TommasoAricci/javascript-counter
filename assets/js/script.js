@@ -61,7 +61,7 @@ function startCounter (text, audio){
         zeroElement.innerHTML = text;
     }
     if(audio){
-        audio
+        audio.play();
     }
 }
 
