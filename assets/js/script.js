@@ -3,9 +3,8 @@ let interval;
 let maxNumber= 0;
 let minNumber= 0;
 
-<<<<<<< HEAD
-=======
-//audio effects//
+//audio effects
+
 let audioElement = new Audio("assets/audio/bulp.mp3");
 audioElement.type = "audio/mpeg";
 let audioLoop = new Audio("assets/audio/reset.mp3");
@@ -14,39 +13,37 @@ let audioWin = new Audio("assets/audio/achievement.mp3");
 audioWin.type = "audio/mpeg";
 
 
-//creazione elementi//
+//elements creation
 
-let counterDiv = document.querySelector(".counter"); // div counter
+function createElement (type, theClass, id, text, parent) {
 
-let divZero = document.createElement("div"); // div zero
-divZero.classList.add("zero");
-counterDiv.appendChild(divZero);
+    const element = document.createElement(type);
 
-let zeroElement = document.createElement("p"); // zero element
-zeroElement.id = "number";
-zeroElement.textContent = 0;
-divZero.appendChild(zeroElement);
+    if(theClass){
+        element.classList.add(theClass);
+    }
+    if(id){
+        element.id = id;
+    }
+    if(text){
+        element.textContent = text;
+    }
+    if(parent){
+        parent.appendChild(element);
+    }
+    return element;
+}
 
-let buttonsDiv = document.createElement("div"); // div buttons
-buttonsDiv.classList.add("buttons");
-counterDiv.appendChild(buttonsDiv);
+    let counterDiv = createElement("div", "counter", null, null, document.body);
+    let divZero = createElement("div", "zero", null, null, counterDiv);
+    let zeroElement = createElement("p", null, "number", "0", divZero);
+    let buttonsDiv = createElement("div", "buttons", null, null, counterDiv);
+    let buttonMin = createElement("button", "bottone1", null, "-", buttonsDiv);
+    let resetElement = createElement("button", "reset", null, "RESET", buttonsDiv);
+    let buttonPlus = createElement("button", "bottone2", null, "+", buttonsDiv);
 
-let buttonMin = document.createElement("button"); // - button
-buttonMin.classList.add("bottone1");
-buttonMin.textContent = "-";
-buttonsDiv.appendChild(buttonMin);
 
-let resetElement = document.createElement("button"); // reset button
-resetElement.classList.add("reset");
-resetElement.textContent = "RESET";
-buttonsDiv.appendChild(resetElement);
-
-let buttonPlus = document.createElement("button"); // + button
-buttonPlus.classList.add("bottone2");
-buttonPlus.textContent = "+";
-buttonsDiv.appendChild(buttonPlus);
-
-//events//
+//events
 
 buttonsDiv.addEventListener("click", function(event){ //events wrapper//
     switch(event.target.classList[0]){
@@ -57,21 +54,40 @@ buttonsDiv.addEventListener("click", function(event){ //events wrapper//
 });
 
 
->>>>>>> master
-//counter//
+//counter functions
+
+function startCounter (text, audio){
+    if(text){
+        zeroElement.innerHTML = text;
+    }
+    if(audio){
+        audio
+    }
+}
 
 function plusOne(){
     counter++;
-    zeroElement.innerHTML = counter;
-    audioElement.play();
+    startCounter(counter, audioElement);
 }
 
 function minOne(){
     counter--;
-    zeroElement.innerHTML = counter;
-    let audio = document.getElementById("audioElement");
-    audioElement.play();
+    startCounter(counter, audioElement);
 }
+
+function gradual(){
+    if(counter<0){
+        counter++;
+        zeroElement.innerHTML = counter;
+    } else if (counter>0){
+        counter--;
+        zeroElement.innerHTML = counter;
+    } else{
+        clearInterval(interval);
+    }
+}
+
+//reset button
 
 function reset(){
 
@@ -93,18 +109,6 @@ function reset(){
     removeTitle();
     margin();
 }    
-
-function gradual(){
-        if(counter<0){
-            counter++;
-            zeroElement.innerHTML = counter;
-    } else if (counter>0){
-            counter--;
-            zeroElement.innerHTML = counter;
-        } else{
-        clearInterval(interval);
-    }
-}
 
 function resetSound(){
     if(counter>0 || counter <0){
