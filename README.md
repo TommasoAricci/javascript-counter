@@ -60,7 +60,7 @@ And for last:
 function removeTitle()
 function margin()
 ```
-I used these last two functions to modify the DOM deleting elements or to change the css style.
+I used these last two functions to modify the css style from JS.
 
 ## What made me do that
 
