@@ -3,13 +3,6 @@ let interval;
 let maxNumber= 0;
 let minNumber= 0;
 
-//audio background//
-
-document.addEventListener('DOMContentLoaded', function() {
-    let audioback = document.getElementById("audioBack");
-    audioback.play();
-})
-
 //counter//
 
 function plusOne(){
