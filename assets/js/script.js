@@ -3,20 +3,74 @@ let interval;
 let maxNumber= 0;
 let minNumber= 0;
 
+<<<<<<< HEAD
+=======
+//audio effects//
+let audioElement = new Audio("assets/audio/bulp.mp3");
+audioElement.type = "audio/mpeg";
+let audioLoop = new Audio("assets/audio/reset.mp3");
+audioLoop.type = "audio/mpeg";
+let audioWin = new Audio("assets/audio/achievement.mp3");
+audioWin.type = "audio/mpeg";
+
+
+//creazione elementi//
+
+let counterDiv = document.querySelector(".counter"); // div counter
+
+let divZero = document.createElement("div"); // div zero
+divZero.classList.add("zero");
+counterDiv.appendChild(divZero);
+
+let zeroElement = document.createElement("p"); // zero element
+zeroElement.id = "number";
+zeroElement.textContent = 0;
+divZero.appendChild(zeroElement);
+
+let buttonsDiv = document.createElement("div"); // div buttons
+buttonsDiv.classList.add("buttons");
+counterDiv.appendChild(buttonsDiv);
+
+let buttonMin = document.createElement("button"); // - button
+buttonMin.classList.add("bottone1");
+buttonMin.textContent = "-";
+buttonsDiv.appendChild(buttonMin);
+
+let resetElement = document.createElement("button"); // reset button
+resetElement.classList.add("reset");
+resetElement.textContent = "RESET";
+buttonsDiv.appendChild(resetElement);
+
+let buttonPlus = document.createElement("button"); // + button
+buttonPlus.classList.add("bottone2");
+buttonPlus.textContent = "+";
+buttonsDiv.appendChild(buttonPlus);
+
+//events//
+
+buttonsDiv.addEventListener("click", function(event){ //events wrapper//
+    switch(event.target.classList[0]){
+        case "bottone1": minOne(); break;
+        case "bottone2": plusOne(); break;
+        case "reset": reset(); break;
+    }
+});
+
+
+>>>>>>> master
 //counter//
 
 function plusOne(){
     counter++;
-    document.getElementById("number").innerHTML = counter;
-    let audio = document.getElementById("audioElement");
-    audio.play();
+    zeroElement.innerHTML = counter;
+    audioElement.play();
 }
 
 function minOne(){
     counter--;
-    document.getElementById("number").innerHTML = counter;
+    zeroElement.innerHTML = counter;
     let audio = document.getElementById("audioElement");
-    audio.play();
+    audioElement.play();
 }
 
 function reset(){
@@ -43,17 +97,16 @@ function reset(){
 function gradual(){
         if(counter<0){
             counter++;
-            document.getElementById("number").innerHTML = counter;
+            zeroElement.innerHTML = counter;
     } else if (counter>0){
             counter--;
-            document.getElementById("number").innerHTML = counter;
+            zeroElement.innerHTML = counter;
         } else{
         clearInterval(interval);
     }
 }
 
 function resetSound(){
-    let audioLoop = document.getElementById("audioloop");
     if(counter>0 || counter <0){
         audioLoop.play();
     } else{
@@ -66,16 +119,12 @@ function resetSound(){
 
 function record (){
 
-    let audioWin = document.getElementById("audioWin");
-
-
     if(counter > maxNumber){
         titleOne.style.display = 'inline-block';
         maxNumber = counter;
         audioWin.play();
         audioWin.currentTime = 0;
         document.getElementById("titleOne").innerHTML = "POSITIVE RECORD IS +" + maxNumber + " CLICKS";
-        let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
     } else if(counter < minNumber){
@@ -84,7 +133,6 @@ function record (){
         document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD IS " + minNumber + " CLICKS";
         audioWin.play();
         audioWin.currentTime = 0;
-        let audioLoop = document.getElementById("audioloop");
         audioLoop.pause();
         title.style.display = 'none';
     } else if(counter === 0){
@@ -101,7 +149,7 @@ function record (){
 
 function removeTitle(){
     let rules = document.querySelector(".rules");
-    rules.remove();
+    rules.style.display = 'none';
 }
 
 //css modifiche//
