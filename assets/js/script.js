@@ -25,7 +25,6 @@ function createElement (type, theClass, id, text, parent) {
 
     return element;
 }
-
     let counterDiv = createElement("div", "counter", null, null, document.body);
     let divZero = createElement("div", "zero", null, null, counterDiv);
     let zeroElement = createElement("p", null, "number", "0", divZero);
@@ -33,7 +32,6 @@ function createElement (type, theClass, id, text, parent) {
     let buttonMin = createElement("button", "bottone1", null, "-", buttonsDiv);
     let resetElement = createElement("button", "reset", null, "RESET", buttonsDiv);
     let buttonPlus = createElement("button", "bottone2", null, "+", buttonsDiv);
-
 
 //events
 
