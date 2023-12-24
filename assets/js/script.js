@@ -3,15 +3,14 @@ let interval;
 let maxNumber= 0;
 let minNumber= 0;
 
-//audio effects
+// audio effects
 
 let audioElement = new Audio("assets/audio/bulp.mp3");
 audioElement.type = "audio/mpeg";
-let audioLoop = new Audio("assets/audio/reset.mp3");
-audioLoop.type = "audio/mpeg";
+let audioError = new Audio("assets/audio/error.mp3");
+audioError.type = "audio/mpeg";
 let audioWin = new Audio("assets/audio/achievement.mp3");
 audioWin.type = "audio/mpeg";
-
 
 //elements creation
 
@@ -19,18 +18,11 @@ function createElement (type, theClass, id, text, parent) {
 
     const element = document.createElement(type);
 
-    if(theClass){
-        element.classList.add(theClass);
-    }
-    if(id){
-        element.id = id;
-    }
-    if(text){
-        element.textContent = text;
-    }
-    if(parent){
-        parent.appendChild(element);
-    }
+    if(theClass) element.classList.add(theClass);
+    if(id) element.id = id;
+    if(text) element.textContent = text;
+    if(parent) parent.appendChild(element);
+
     return element;
 }
 
@@ -53,43 +45,34 @@ buttonsDiv.addEventListener("click", function(event){ //events wrapper//
     }
 });
 
-
 //counter functions
 
 function startCounter (text, audio){
-    if(text){
-        zeroElement.innerHTML = text;
-    }
-    if(audio){
-        audio.play();
-    }
+    if(text) zeroElement.innerHTML = text;
+    if(audio) audio.play();
 }
 
-function plusOne(){
+function plusOne(){ //+ button
     counter++;
     startCounter(counter, audioElement);
 }
 
-function minOne(){
+function minOne(){ //- button
     counter--;
     startCounter(counter, audioElement);
 }
 
-function gradual(){
+function gradual(){ 
     if(counter<0){
         counter++;
         zeroElement.innerHTML = counter;
     } else if (counter>0){
         counter--;
         zeroElement.innerHTML = counter;
-    } else{
-        clearInterval(interval);
-    }
+    } else clearInterval(interval);
 }
 
-//reset button
-
-function reset(){
+function reset(){ //reset button
 
     if((counter>0 && counter<=19) || (counter<0 && counter>=-19)){
         interval = setInterval(gradual, 40);
@@ -111,40 +94,35 @@ function reset(){
 }    
 
 function resetSound(){
-    if(counter>0 || counter <0){
-        audioLoop.play();
-    } else{
-        audioLoop.pause();
-    }
+    if(counter>0 || counter <0) audioError.play();
+    else audioError.pause();
 }
 
-
 //record//
+
+function recordSet (title, audio, time, text, pause, display){
+    if(title) title.style.display = 'inline-block';
+    if(audio) audio.play();
+    if(time) time.currentTime = 0;
+    if(pause) pause.pause();
+    if(text === "titleOne") document.getElementById("titleOne").innerHTML = "POSITIVE RECORD IS +" + maxNumber + " CLICKS";
+    else if(text === "titleTwo") document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD IS " + minNumber + " CLICKS";
+    else if(text === "title") document.getElementById("title").innerHTML = "YOUR RECORD IS 0 CLICKS";
+    if(display) display.style.display = 'none';
+}
 
 function record (){
 
     if(counter > maxNumber){
-        titleOne.style.display = 'inline-block';
         maxNumber = counter;
-        audioWin.play();
-        audioWin.currentTime = 0;
-        document.getElementById("titleOne").innerHTML = "POSITIVE RECORD IS +" + maxNumber + " CLICKS";
-        audioLoop.pause();
-        title.style.display = 'none';
-    } else if(counter < minNumber){
-        titleTwo.style.display = 'inline-block';
+        recordSet(titleOne, audioWin, audioWin, "titleOne", audioError, title);
+    } else if(counter < minNumber){    
         minNumber = counter;
-        document.getElementById("titleTwo").innerHTML = "NEGATIVE RECORD IS " + minNumber + " CLICKS";
-        audioWin.play();
-        audioWin.currentTime = 0;
-        audioLoop.pause();
-        title.style.display = 'none';
+        recordSet(titleTwo, audioWin, audioWin, "titleTwo", audioError, title);
     } else if(counter === 0){
         maxNumber = 0;
         minNumber = 0;
-        title.style.display = 'inline-block';
-        document.getElementById("title").innerHTML = "YOUR RECORD IS 0 CLICKS";
-        titleOne.style.display = 'none';
+        recordSet(title, null, null, "title", null, titleOne);
         titleTwo.style.display = 'none';
     }
 }
@@ -160,5 +138,7 @@ function removeTitle(){
 
 function margin(){
     let title = document.getElementById("title");
-    title.style.marginBottom="-5px";
+    title.style.marginBottom="-6px";
+    titleOne.style.marginBottom="-6px";
+    titleTwo.style.marginBottom="-6px";
 }
