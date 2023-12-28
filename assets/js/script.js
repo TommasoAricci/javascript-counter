@@ -20,7 +20,7 @@ function createElement (type, theClass, id, text, parent) {
 
     if(theClass) element.classList.add(theClass);
     if(id) element.id = id;
-    if(text) element.textContent = text;
+    if(text) element.innerHTML = text;
     if(parent) parent.appendChild(element);
 
     return element;
